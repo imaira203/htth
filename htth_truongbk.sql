@@ -39,7 +39,7 @@ CREATE TABLE `accounts`  (
 -- ----------------------------
 -- Records of accounts
 -- ----------------------------
-INSERT INTO `accounts` VALUES (1, 'admin', '1', '[\"admin\"]', 1, 0, NULL, 0, 10000, 0);
+INSERT INTO `accounts` VALUES (1, 'admin', '1', 1, '[\"admin\"]', 1, 0, NULL, 0, 10000, 0);
 
 -- ----------------------------
 -- Table structure for boss

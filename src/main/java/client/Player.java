@@ -1277,6 +1277,44 @@ public class Player {
             this.kimcuong += par;
         }
     }
+
+    public synchronized boolean isAdmin(Player player) throws IOException {
+        String query = "SELECT `admin` FROM `accounts` WHERE BINARY `user` = '" + conn.user + "' LIMIT 1;";
+        Statement st = null;
+        ResultSet rs = null;
+        Connection connection = null;
+
+        try {
+            connection = SQL.gI().getCon();
+            st = connection.createStatement();
+            rs = st.executeQuery(query);
+            rs.next();
+            byte isadmin = (byte) rs.getInt("admin");
+            if (isadmin == 1) {
+                return true;
+            }
+            return false;
+        } catch (SQLException e) {
+            Service.send_box_ThongBao_OK(this, "Đã xảy ra lỗi");
+            e.printStackTrace();
+            return false;
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (st != null) {
+                    st.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public synchronized boolean update_coin(int coin_exchange) throws IOException {
 		String query = "SELECT `coin` FROM `accounts` WHERE BINARY `user` = '" + conn.user + "' LIMIT 1;";
 		int coin_old = 0;
