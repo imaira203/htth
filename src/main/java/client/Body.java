@@ -913,9 +913,9 @@ public class Body {
     }
 
     private static void load_point_1() {
-        Point1_Template_atk = new int[200];
-        Point1_Template_crit = new int[200];
-        Point1_Template_pierce = new int[200];
+        Point1_Template_atk = new int[5_000];
+        Point1_Template_crit = new int[5_000];
+        Point1_Template_pierce = new int[5_000];
         Point1_Template_atk[0] = 44;
         Point1_Template_atk[1] = 71;
         Point1_Template_atk[2] = 100;
@@ -1159,20 +1159,24 @@ public class Body {
         Point1_Template_pierce[78] = 128;
         Point1_Template_pierce[79] = 130;
         Point1_Template_pierce[80] = 132;
-        for (int i = 80; i < 200; i++) {
+        for (int i = 80; i < Point1_Template_atk.length; i++) {
             Point1_Template_atk[i] = Point1_Template_atk[i - 1]
                     + (Point1_Template_atk[i - 1] - Point1_Template_atk[i - 2]);
             Point1_Template_crit[i] = Point1_Template_crit[i - 1]
                     + (Point1_Template_crit[i - 1] - Point1_Template_crit[i - 2]);
             Point1_Template_pierce[i] = Point1_Template_pierce[i - 1]
                     + (Point1_Template_pierce[i - 1] - Point1_Template_pierce[i - 2]);
+
+            if (Point1_Template_crit[i] > 100) {
+                Point1_Template_crit[i] = 100;
+            }
         }
     }
 
     private static void load_point_2() {
-        Point2_Template_def = new int[200];
-        Point2_Template_resist_magic = new int[200];
-        Point2_Template_resist_physical = new int[200];
+        Point2_Template_def = new int[5_000];
+        Point2_Template_resist_magic = new int[5_000];
+        Point2_Template_resist_physical = new int[5_000];
         Point2_Template_def[0] = 140;
         Point2_Template_def[1] = 148;
         Point2_Template_def[2] = 165;
@@ -1416,7 +1420,7 @@ public class Body {
         Point2_Template_resist_physical[78] = 305;
         Point2_Template_resist_physical[79] = 310;
         Point2_Template_resist_physical[80] = 315;
-        for (int i = 80; i < 200; i++) {
+        for (int i = 80; i < Point2_Template_def.length; i++) {
             Point2_Template_def[i] = Point2_Template_def[i - 1]
                     + (Point2_Template_def[i - 1] -Point2_Template_def[i - 2]);
             Point2_Template_resist_magic[i] = Point2_Template_resist_magic[i - 1]
@@ -1428,8 +1432,8 @@ public class Body {
     }
 
     private static void load_point_3() {
-        Point3_Template_hp = new int[200];
-        Point3_Template_hp_potion = new int[200];
+        Point3_Template_hp = new int[5_000];
+        Point3_Template_hp_potion = new int[5_000];
         Point3_Template_hp[0] = 1001;
         Point3_Template_hp[1] = 1016;
         Point3_Template_hp[2] = 1041;
@@ -1592,7 +1596,7 @@ public class Body {
         Point3_Template_hp_potion[78] = 720;
         Point3_Template_hp_potion[79] = 732;
         Point3_Template_hp_potion[80] = 744;
-        for (int i = 80; i < 200; i++) {
+        for (int i = 80; i < Point3_Template_hp.length; i++) {
             Point3_Template_hp[i] = Point3_Template_hp[i - 1]
                     + (Point3_Template_hp[i - 1] - Point3_Template_hp[i - 2]);
             Point3_Template_hp_potion[i] = Point3_Template_hp_potion[i - 1]
@@ -1601,8 +1605,8 @@ public class Body {
     }
 
     private static void load_point_4() {
-        Point4_Template_mp = new int[200];
-        Point4_Template_dame_crit = new int[200];
+        Point4_Template_mp = new int[5_000];
+        Point4_Template_dame_crit = new int[5_000];
         Point4_Template_mp[0] = 20;
         Point4_Template_mp[1] = 21;
         Point4_Template_mp[2] = 24;
@@ -1765,7 +1769,7 @@ public class Body {
         Point4_Template_dame_crit[78] = 3000;
         Point4_Template_dame_crit[79] = 3050;
         Point4_Template_dame_crit[80] = 3100;
-        for (int i = 80; i < 200; i++) {
+        for (int i = 80; i < Point4_Template_mp.length; i++) {
             Point4_Template_mp[i] = Point4_Template_mp[i - 1]
                     + (Point4_Template_mp[i - 1] - Point4_Template_mp[i - 2]);
             Point4_Template_dame_crit[i] = Point4_Template_dame_crit[i - 1]
@@ -1774,8 +1778,8 @@ public class Body {
     }
 
     private static void load_point_5() {
-        Point5_Template_cooldown = new int[200];
-        Point5_Template_miss = new int[200];
+        Point5_Template_cooldown = new int[5_000];
+        Point5_Template_miss = new int[5_000];
         Point5_Template_cooldown[0] = 13;
         Point5_Template_cooldown[1] = 16;
         Point5_Template_cooldown[2] = 19;
@@ -1938,11 +1942,16 @@ public class Body {
         Point5_Template_miss[78] = 128;
         Point5_Template_miss[79] = 130;
         Point5_Template_miss[80] = 132;
-        for (int i = 80; i < 200; i++) {
+        for (int i = 80; i < Point5_Template_miss.length; i++) {
             Point5_Template_cooldown[i] = Point5_Template_cooldown[i - 1]
                     + (Point5_Template_cooldown[i - 1] - Point5_Template_cooldown[i - 2]);
             Point5_Template_miss[i] = Point5_Template_miss[i - 1]
                     + (Point5_Template_miss[i - 1] - Point5_Template_miss[i - 2]);
+
+            if (Point5_Template_cooldown[i] > 500 && Point5_Template_miss[i] > 500) {
+                Point5_Template_cooldown[i] = 500;
+                Point5_Template_miss[i] = 500;
+            }
         }
     }
 }

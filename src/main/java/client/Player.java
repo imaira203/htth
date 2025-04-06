@@ -41,11 +41,11 @@ public class Player {
     public int mp;
     public short level;
     public long exp;
-    public short point1;
-    public short point2;
-    public short point3;
-    public short point4;
-    public short point5;
+    public int point1;
+    public int point2;
+    public int point3;
+    public int point4;
+    public int point5;
     public Map map;
     public int xold;
     public int yold;
@@ -1569,48 +1569,23 @@ public class Player {
         if (this.pointAttribute >= value) {
             switch (index) {
                 case 0: {
-                    if ((this.point1 + value) > 80) {
-                        return;
-                    }
-                    if (this.point1 < 80) {
                         this.point1 += value;
-                    }
                     break;
                 }
                 case 1: {
-                    if ((this.point2 + value) > 80) {
-                        return;
-                    }
-                    if (this.point2 < 80) {
                         this.point2 += value;
-                    }
                     break;
                 }
                 case 2: {
-                    if ((this.point3 + value) > 80) {
-                        return;
-                    }
-                    if (this.point3 < 80) {
                         this.point3 += value;
-                    }
                     break;
                 }
                 case 3: {
-                    if ((this.point4 + value) > 80) {
-                        return;
-                    }
-                    if (this.point4 < 80) {
                         this.point4 += value;
-                    }
                     break;
                 }
                 case 4: {
-                    if ((this.point5 + value) > 80) {
-                        return;
-                    }
-                    if (this.point5 < 80) {
                         this.point5 += value;
-                    }
                     break;
                 }
             }
