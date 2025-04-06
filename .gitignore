@@ -8,6 +8,8 @@ target/
 # Logs
 *.log
 
+htth.conf
+
 # OS
 .DS_Store
 Thumbs.db
