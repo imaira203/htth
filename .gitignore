@@ -1,8 +1,13 @@
-/.idea/
+# Maven
+target/
 
-/htth.conf
+# IntelliJ IDEA
+.idea/
+*.iml
 
-/target/
-target/*
+# Logs
+*.log
 
-
+# OS
+.DS_Store
+Thumbs.db
