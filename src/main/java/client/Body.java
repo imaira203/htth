@@ -913,9 +913,9 @@ public class Body {
     }
 
     private static void load_point_1() {
-        Point1_Template_atk = new int[5_000];
-        Point1_Template_crit = new int[5_000];
-        Point1_Template_pierce = new int[5_000];
+        Point1_Template_atk = new int[5_500];
+        Point1_Template_crit = new int[5_500];
+        Point1_Template_pierce = new int[5_500];
         Point1_Template_atk[0] = 44;
         Point1_Template_atk[1] = 71;
         Point1_Template_atk[2] = 100;
@@ -1174,9 +1174,9 @@ public class Body {
     }
 
     private static void load_point_2() {
-        Point2_Template_def = new int[5_000];
-        Point2_Template_resist_magic = new int[5_000];
-        Point2_Template_resist_physical = new int[5_000];
+        Point2_Template_def = new int[5_500];
+        Point2_Template_resist_magic = new int[5_500];
+        Point2_Template_resist_physical = new int[5_500];
         Point2_Template_def[0] = 140;
         Point2_Template_def[1] = 148;
         Point2_Template_def[2] = 165;
@@ -1432,8 +1432,8 @@ public class Body {
     }
 
     private static void load_point_3() {
-        Point3_Template_hp = new int[5_000];
-        Point3_Template_hp_potion = new int[5_000];
+        Point3_Template_hp = new int[5_500];
+        Point3_Template_hp_potion = new int[5_500];
         Point3_Template_hp[0] = 1001;
         Point3_Template_hp[1] = 1016;
         Point3_Template_hp[2] = 1041;
@@ -1605,8 +1605,8 @@ public class Body {
     }
 
     private static void load_point_4() {
-        Point4_Template_mp = new int[5_000];
-        Point4_Template_dame_crit = new int[5_000];
+        Point4_Template_mp = new int[5_500];
+        Point4_Template_dame_crit = new int[5_500];
         Point4_Template_mp[0] = 20;
         Point4_Template_mp[1] = 21;
         Point4_Template_mp[2] = 24;
@@ -1778,8 +1778,8 @@ public class Body {
     }
 
     private static void load_point_5() {
-        Point5_Template_cooldown = new int[5_000];
-        Point5_Template_miss = new int[5_000];
+        Point5_Template_cooldown = new int[5_500];
+        Point5_Template_miss = new int[5_500];
         Point5_Template_cooldown[0] = 13;
         Point5_Template_cooldown[1] = 16;
         Point5_Template_cooldown[2] = 19;
